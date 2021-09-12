@@ -20,7 +20,15 @@ app.get('/', (req, res) => {
       },
       {
         'uri':'/blocks',
-        'verbs':['GET','POST']
+        'verbs':['GET']
+      },
+      {
+        'uri':'/block',
+        'verbs':['POST']
+      },
+      {
+        'uri':'/mine',
+        'verbs':['POST']
       },
     ]
   })
