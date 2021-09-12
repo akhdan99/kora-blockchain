@@ -3,3 +3,4 @@
 # Nb: Untuk mengaktifkan, tambahkan "." pada awal nama file
 
 PORT=3000
+DIFFICULTY=1
