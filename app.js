@@ -49,7 +49,7 @@ app.post('/block',(req, res)=>{
     "amount": req.body.amount,
     "stockId":req.body.stockId
   }
-  queue.push(new Block(data,process.env.DIFFICULTY))
+  queue.push(new Block(data,Number(process.env.DIFFICULTY)))
   res.json(response.create('Block Berhasil ditambahkan ke Queue!','',data))
 })
 
