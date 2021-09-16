@@ -5,7 +5,7 @@ const BlockChain = require('./lib/blockChain')
 const Response = require('./lib/response')
 
 const response = new Response()
-const queue = []
+let queue = []
 const chain = new BlockChain()
 
 app.use(express.json());
@@ -49,7 +49,7 @@ app.post('/block',(req, res)=>{
     "amount": req.body.amount,
     "stockId":req.body.stockId
   }
-  queue.push(new Block(chain.getBlocks().length, data,process.env.DIFFICULTY))
+  queue.push(new Block(data,process.env.DIFFICULTY))
   res.json(response.create('Block Berhasil ditambahkan ke Queue!','',data))
 })
 
@@ -58,7 +58,9 @@ app.post('/mine',(req, res)=>{
   queue.forEach(block => {
     chain.mine(block)
   });
-  res.json(response.create('Semua Block Berhasil di Mine!','',{"blocks":chain.getBlocks()}))
+  queue = []
+  const blocks = chain.getBlocks()
+  res.json(response.create('Semua Block Berhasil di Mine!','',{"blocksLength":blocks.length,"blocks":blocks}))
 })
 
 module.exports = app
