@@ -60,7 +60,7 @@ app.post('/mine',(req, res)=>{
   });
   queue = []
   const blocks = chain.getBlocks()
-  res.json(response.create('Semua Block Berhasil di Mine!','',{"blocksLength":blocks.length,"blocks":blocks}))
+  res.json(response.create('Minning Berhasil!','',{"blocksLength":blocks.length,"blocks":blocks}))
 })
 
 module.exports = app
