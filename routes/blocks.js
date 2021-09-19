@@ -8,7 +8,7 @@ router.get('/', (req, res)=>{
   let blocks =  req.app.locals.chain.getBlocks()
   
   res.json(
-    response.create('semua block berhasil diambil!','',{'blocks':blocks})
+    response.create('semua block berhasil diambil!','',{'blocksLength':blocks.length,'blocks':blocks})
   )
 })
 
