@@ -13,9 +13,11 @@ const mineRoute = require('./routes/mine')
 const uriRoute = require('./routes/uri')
 const blockRoute = require('./routes/block')
 const blocksRoute = require('./routes/blocks')
+const signinRoute = require('./routes/signin')
 
 // Routing
 app.use('/', uriRoute)
+app.use('/signin', signinRoute)
 app.use('/blocks', blocksRoute)
 app.use('/block',blockRoute)
 app.use('/mine',mineRoute)
