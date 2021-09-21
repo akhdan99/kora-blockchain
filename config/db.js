@@ -1,5 +1,6 @@
 /**
  * Digunakan untuk melakukan configurasi Knex
+ * @author Akhdan Faiz A <akhdanfaizamanullah@gmail.com>
  */
 
 module.exports ={

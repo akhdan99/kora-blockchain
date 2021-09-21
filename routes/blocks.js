@@ -1,15 +1,16 @@
 const express = require('express')
-const Response = require('../lib/response')
+const auth = require('../middleware/auth')
+const controller = require('../module/blocks/controller')
 
-const response = new Response()
 const router = express.Router()
 
-router.get('/', (req, res)=>{
-  let blocks =  req.app.locals.chain.getBlocks()
-  
-  res.json(
-    response.create('semua block berhasil diambil!','',{'blocksLength':blocks.length,'blocks':blocks})
-  )
-})
+/**
+ * @author Akhdan Faiz A <akhdanfaizamanullah@gmail.com>
+ */
+
+router.route('/').get(
+  auth.verifyJWT,
+  controller.getAllBlocks
+)
 
 module.exports = router

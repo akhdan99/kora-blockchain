@@ -6,6 +6,11 @@ const Response = require('../../lib/response')
 const response = new Response()
 
 module.exports = {
+  
+  /**
+   * @author Akhdan Faiz A <akhdanfaizamanullah@gmail.com>
+   */
+
   addBlock:(req, res, next)=>{
     const from = new User(req.body.userId)
     const to = new User(req.body.to)
