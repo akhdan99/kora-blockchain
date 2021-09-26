@@ -4,3 +4,10 @@
 
 PORT=3000
 DIFFICULTY=1
+
+# DB Configuration
+# ==================
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=blockchain
