@@ -1,5 +1,6 @@
 const express = require('express')
 const auth = require('../middleware/auth')
+const {setChain} = require('../middleware/constructor/index')
 const controller = require('../module/blocks/controller')
 
 const router = express.Router()
@@ -10,6 +11,7 @@ const router = express.Router()
 
 router.route('/').get(
   auth.verifyJWT,
+  setChain,
   controller.getAllBlocks
 )
 

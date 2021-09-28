@@ -1,5 +1,4 @@
 const {db} = require('../config/db')
-const {uid} = require('uid/secure')
 
 const table = 'block'
 
@@ -9,8 +8,14 @@ module.exports = {
      * @author Akhdan Faiz A <akhdanfaizamanullah@gmail.com>
      */
     saveBlock: async (data) =>{
-        data.id = uid(32)
         let result =  await db(table).insert(data)
         return result
+    },
+    getAllBlock:  async ()=>{ 
+        let results =  await db(table).select().orderBy('blockNumber', 'asc')
+        results.forEach(element => {
+            element.data = JSON.parse(element.data)
+        });
+        return results
     }
 }
