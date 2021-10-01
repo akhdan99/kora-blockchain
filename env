@@ -4,6 +4,7 @@
 
 PORT=3000
 DIFFICULTY=1
+BASEURL=127.0.0.1:3000
 
 # DB Configuration
 # ==================
@@ -11,3 +12,9 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=
 DB_NAME=blockchain
+
+# Node Config
+# ==================
+
+# Dipisahkan dengan ;
+ND_LIST=nd1.chain.com;nd2.chain.com
